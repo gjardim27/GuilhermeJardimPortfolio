@@ -1,19 +1,29 @@
-// set current year
-document.getElementById("year").textContent = new Date().getFullYear();
+// Dark mode toggle with localStorage persistence
+(function () {
+  var toggle = document.getElementById('themeToggle');
+  var icon = toggle && toggle.querySelector('.toggle-icon');
+  var root = document.documentElement;
 
-// theme toggle
-const root = document.documentElement;
-const toggle = document.getElementById("themeToggle");
+  // Restore saved theme or default to light
+  var saved = localStorage.getItem('theme');
+  if (saved === 'dark' || saved === 'light') {
+    root.setAttribute('data-theme', saved);
+  }
+  updateIcon();
 
-function setTheme(theme) {
-  root.setAttribute("data-theme", theme);
-  toggle.textContent = theme === "dark" ? "🌙" : "☀️";
-  localStorage.setItem("theme", theme);
-}
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var current = root.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateIcon();
+    });
+  }
 
-setTheme(localStorage.getItem("theme") || "dark");
-
-toggle.addEventListener("click", () => {
-  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  setTheme(next);
-});
+  function updateIcon() {
+    if (!icon) return;
+    var theme = root.getAttribute('data-theme');
+    icon.textContent = theme === 'dark' ? '\u2600' : '\u263D';
+  }
+})();

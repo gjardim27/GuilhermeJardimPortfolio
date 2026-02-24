@@ -1,49 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects | Guilherme Jardim</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Projects</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="resume.html">Resume</a>
-  </nav>
-</header>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Guilherme Jardim</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="Projects.html">Projects</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">&#9789;</span>
+      </button>
+    </div>
+  </div>
+</nav>
 
-<section>
-  <h2>Active Control of Transitional Airfoil Flows</h2>
-  <p><strong>Context:</strong> Summer Provost Fellowship — Dryden Wind Tunnel</p>
-
-  <ul>
-    <li>Led wind tunnel experiments investigating acoustic control at low Reynolds numbers</li>
-    <li>Designed a phase-locked PIV synchronization system (camera, laser, speaker)</li>
-    <li>Modernized a 1200+ line MATLAB codebase into modular, multi-run workflows</li>
-    <li>Analyzed lift/drag response and separation behavior under acoustic forcing</li>
-  </ul>
-
-  <p><strong>Tools:</strong> MATLAB, Python, DaVis, NX, SCPI, PIV</p>
+<!-- Page Header -->
+<section class="hero" style="padding-bottom: 32px;">
+  <h1 class="hero-name">Projects</h1>
+  <p class="hero-tagline">Research, coursework, and personal engineering projects.</p>
 </section>
 
-<hr>
+<!-- Projects List -->
+<section class="section" style="padding-top: 0;">
+  <div class="projects-grid">
 
-<section>
-  <h2>Quadcopter Drone Design</h2>
-  <p><strong>Course:</strong> AME 308 — Computer Aided Engineering</p>
+    <div class="project-card">
+      <div class="project-tag">Research</div>
+      <h3 class="project-name">Active Control of Transitional Airfoil Flows</h3>
+      <p class="project-context">Summer Provost Fellowship &mdash; Dryden Wind Tunnel</p>
+      <p class="project-description">
+        Led wind tunnel experiments investigating acoustic control at low Reynolds numbers.
+        Designed a phase-locked PIV synchronization system (camera, laser, speaker).
+        Modernized a 1200+ line MATLAB codebase into modular, multi-run workflows.
+        Analyzed lift/drag response and separation behavior under acoustic forcing.
+      </p>
+      <div class="project-tools">
+        <span>MATLAB</span><span>Python</span><span>DaVis</span><span>NX</span><span>SCPI</span><span>PIV</span>
+      </div>
+    </div>
 
-  <ul>
-    <li>Designed and modeled drone components in Siemens NX</li>
-    <li>Created fully constrained assemblies with exploded views and BOMs</li>
-    <li>Performed motion and torque simulations under friction and frictionless cases</li>
-  </ul>
+    <div class="project-card">
+      <div class="project-tag">PIV Analysis</div>
+      <h3 class="project-name">Vorticity Identification from Instantaneous PIV</h3>
+      <p class="project-context">Wind Tunnel Research</p>
+      <p class="project-description">
+        Developed Python scripts to extract vortex core spacing in shear layers from PIV data.
+        Computed swirling strength (&lambda;<sub>ci</sub>) and Q-criterion fields to identify
+        coherent vortical structures. Relates spatial wavelengths to temporal frequencies
+        via convection velocity estimates for Kelvin-Helmholtz instability characterization.
+      </p>
+      <div class="project-tools">
+        <span>Python</span><span>NumPy</span><span>SciPy</span><span>LaVision</span><span>Matplotlib</span>
+      </div>
+    </div>
 
-  <p><strong>Tools:</strong> Siemens NX, FEA, Motion Simulation</p>
+    <div class="project-card">
+      <div class="project-tag">Design</div>
+      <h3 class="project-name">Quadcopter Drone Design</h3>
+      <p class="project-context">AME 308 &mdash; Computer Aided Engineering</p>
+      <p class="project-description">
+        Designed and modeled drone components in Siemens NX. Created fully constrained
+        assemblies with exploded views and bills of materials. Performed motion and torque
+        simulations under friction and frictionless conditions.
+      </p>
+      <div class="project-tools">
+        <span>Siemens NX</span><span>FEA</span><span>Motion Simulation</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Coursework</div>
+      <h3 class="project-name">Mechatronics Laboratory</h3>
+      <p class="project-context">AME 341a</p>
+      <p class="project-description">
+        Completed a series of mechatronics lab assignments covering system identification,
+        power spectrum analysis, signal processing, and control system modeling using MATLAB.
+      </p>
+      <div class="project-tools">
+        <span>MATLAB</span><span>System ID</span><span>Signal Processing</span>
+      </div>
+    </div>
+
+  </div>
 </section>
 
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Guilherme Jardim</p>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>

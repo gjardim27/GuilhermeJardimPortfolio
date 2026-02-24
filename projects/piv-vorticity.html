@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vorticity Identification from PIV | Guilherme Jardim</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">Guilherme Jardim</a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Portfolio</a>
+      <a href="https://www.linkedin.com/in/guilhermecjardim/" target="_blank" rel="noopener">LinkedIn</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">&#9789;</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="project-page">
+  <div class="breadcrumb">
+    <a href="../index.html#projects">Portfolio</a>
+    <span>&gt;</span>
+    <span class="breadcrumb-current">PIV Vorticity</span>
+  </div>
+
+  <h1 class="project-page-title">Vorticity Identification from Instantaneous PIV</h1>
+
+  <!-- HERO IMAGE: replace src with a banner image for this project -->
+  <div class="project-hero-img">
+    <img src="../images/piv-vorticity.jpg" alt="Vorticity Identification from PIV">
+  </div>
+
+  <div class="project-page-content">
+    <h2>Overview</h2>
+    <p>
+      <!-- EDIT THIS -->
+      Developed a Python-based pipeline to extract vortex core positions and spacing
+      from instantaneous PIV fields in a separated shear layer. The goal is to identify
+      Kelvin-Helmholtz vortex shedding frequencies from spatial data.
+    </p>
+
+    <h2>Methodology</h2>
+    <p>
+      <!-- EDIT THIS -->
+      Computed velocity gradients from PIV snapshots using normalised Gaussian convolution
+      for noise suppression. Applied three vortex identification criteria: spanwise
+      vorticity (&omega;<sub>z</sub>), swirling strength (&lambda;<sub>ci</sub>), and
+      Q-criterion. Detected discrete vortex cores via thresholding and connected-component
+      labeling on the &lambda;<sub>ci</sub> field.
+    </p>
+
+    <h2>Results</h2>
+    <p>
+      <!-- EDIT THIS -->
+      Extracted inter-core spacings across multiple instantaneous frames and converted
+      to temporal frequencies via convection velocity estimates. Generated statistical
+      distributions of vortex spacing and shedding frequency.
+    </p>
+
+    <h2>Tools</h2>
+    <div class="project-tools">
+      <span>Python</span><span>NumPy</span><span>SciPy</span><span>LaVision</span><span>Matplotlib</span>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Guilherme Jardim</p>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>

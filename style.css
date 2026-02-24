@@ -440,3 +440,38 @@ a:hover {
     min-width: unset;
   }
 }
+
+.pillRow{display:flex; gap:18px;}
+.pill{
+  display:inline-block;
+  padding:10px 18px;
+  border:1px solid var(--divider);
+  border-radius:6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  color: var(--accent);
+}
+
+.buttonRow{display:flex; gap:14px;}
+.primaryBtn, .secondaryBtn{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:6px;
+  font-weight:600;
+}
+.primaryBtn{
+  background:rgba(56,189,248,.15);
+  border:1px solid rgba(56,189,248,.4);
+  color:var(--text);
+}
+.secondaryBtn{
+  background: var(--card);
+  border:1px solid var(--divider);
+  color:var(--text);
+}
+
+.footer{
+  border-top:1px solid var(--divider);
+  padding:20px 28px;
+  text-align:center;
+  color:var(--muted);
+}

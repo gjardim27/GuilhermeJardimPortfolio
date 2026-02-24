@@ -1,34 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guilherme Jardim | Aerospace Engineering</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>Guilherme Jardim</h1>
-  <p>Aerospace Engineering Student | Aerodynamics | CFD | Experimental Fluid Mechanics</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="resume.html">Resume</a>
-  </nav>
-</header>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">Guilherme Jardim</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="Projects.html">Portfolio</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">&#9789;</span>
+      </button>
+    </div>
+  </div>
+</nav>
 
-<section>
-  <h2>About</h2>
-  <p>
-    Aerospace Engineering student at USC with hands-on experience in
-    low-Reynolds-number aerodynamics, wind tunnel testing, PIV,
-    CFD, and modeling & simulation.
-  </p>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-greeting">Hi, I'm</p>
+    <h1 class="hero-name">Guilherme Jardim</h1>
+    <p class="hero-tagline">Aerospace Engineering &mdash; Aerodynamics, CFD &amp; Experimental Fluid Mechanics</p>
+    <p class="hero-description">
+      Aerospace Engineering student at USC with hands-on experience in low-Reynolds-number
+      aerodynamics, wind tunnel testing, PIV, CFD, and modeling &amp; simulation.
+    </p>
+    <div class="hero-links">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="https://github.com/gjardim27" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <p>© 2026 Guilherme Jardim</p>
+<!-- About Section -->
+<section id="about" class="section">
+  <h2 class="section-title">About Me</h2>
+  <div class="about-content">
+    <div class="about-text">
+      <p>
+        I'm an Aerospace Engineering student at the University of Southern California
+        with a focus on aerodynamics and experimental fluid mechanics. My work spans
+        wind tunnel testing, particle image velocimetry (PIV), computational fluid
+        dynamics, and data-driven analysis of complex flow phenomena.
+      </p>
+      <p>
+        Currently, I'm investigating active control of transitional airfoil flows at
+        the Dryden Wind Tunnel, studying acoustic forcing effects on separation behavior
+        at low Reynolds numbers.
+      </p>
+      <div class="about-details">
+        <div class="detail">
+          <span class="detail-label">Focus Areas</span>
+          <span class="detail-value">Aerodynamics, CFD, PIV, Wind Tunnel Testing</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">Tools</span>
+          <span class="detail-value">MATLAB, Python, DaVis, Siemens NX</span>
+        </div>
+        <div class="detail">
+          <span class="detail-label">University</span>
+          <span class="detail-value">University of Southern California</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-tag">Research</div>
+      <h3 class="project-name">Active Control of Transitional Airfoil Flows</h3>
+      <p class="project-context">Summer Provost Fellowship &mdash; Dryden Wind Tunnel</p>
+      <p class="project-description">
+        Led wind tunnel experiments investigating acoustic control at low Reynolds numbers.
+        Designed a phase-locked PIV synchronization system and analyzed lift/drag response
+        and separation behavior under acoustic forcing.
+      </p>
+      <div class="project-tools">
+        <span>MATLAB</span><span>Python</span><span>DaVis</span><span>PIV</span><span>SCPI</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">PIV Analysis</div>
+      <h3 class="project-name">Vorticity Identification from Instantaneous PIV</h3>
+      <p class="project-context">Wind Tunnel Research</p>
+      <p class="project-description">
+        Developed Python scripts to extract vortex core spacing in shear layers from PIV data,
+        computing swirling strength and Q-criterion fields to identify coherent structures
+        and relate spatial wavelengths to temporal frequencies via convection velocity estimates.
+      </p>
+      <div class="project-tools">
+        <span>Python</span><span>NumPy</span><span>SciPy</span><span>LaVision</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-tag">Design</div>
+      <h3 class="project-name">Quadcopter Drone Design</h3>
+      <p class="project-context">AME 308 &mdash; Computer Aided Engineering</p>
+      <p class="project-description">
+        Designed and modeled drone components in Siemens NX. Created fully constrained
+        assemblies with exploded views and performed motion and torque simulations under
+        friction and frictionless conditions.
+      </p>
+      <div class="project-tools">
+        <span>Siemens NX</span><span>FEA</span><span>Motion Sim</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="projects-more">
+    <a href="Projects.html" class="btn btn-outline">See All Projects &rarr;</a>
+  </div>
+</section>
+
+<!-- Contact / Social Section -->
+<section id="contact" class="section">
+  <h2 class="section-title">Get in Touch</h2>
+  <p class="contact-text">
+    Interested in collaborating or want to learn more about my work?
+  </p>
+  <div class="social-links">
+    <a href="https://github.com/gjardim27" target="_blank" rel="noopener" class="social-link">
+      GitHub
+    </a>
+    <a href="https://linkedin.com/in/guilherme-jardim" target="_blank" rel="noopener" class="social-link">
+      LinkedIn
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Guilherme Jardim</p>
 </footer>
 
+<script src="main.js"></script>
 </body>
 </html>

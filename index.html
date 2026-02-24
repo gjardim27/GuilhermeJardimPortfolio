@@ -1,34 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Guilherme Jardim | Aerospace Engineering</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Name</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">YourName</a>
+      <nav class="nav">
+        <a href="/resume.html">RESUME</a>
+        <a href="/portfolio.html">PORTFOLIO</a>
+        <a href="/blog.html">BLOG</a>
+        <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+      </nav>
+    </header>
 
-<header>
-  <h1>Guilherme Jardim</h1>
-  <p>Aerospace Engineering Student | Aerodynamics | CFD | Experimental Fluid Mechanics</p>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="resume.html">Resume</a>
-  </nav>
-</header>
+    <main class="content">
+      <section class="hero">
+        <h1>YourName</h1>
+        <p class="subtitle">A short line about what you do.</p>
+      </section>
 
-<section>
-  <h2>About</h2>
-  <p>
-    Aerospace Engineering student at USC with hands-on experience in
-    low-Reynolds-number aerodynamics, wind tunnel testing, PIV,
-    CFD, and modeling & simulation.
-  </p>
-</section>
+      <section class="section">
+        <h2>About Me</h2>
+        <div class="aboutRow">
+          <img class="avatar" src="assets/headshot.jpg" alt="Your headshot" />
+          <div>
+            <h3>My Name is Your Name</h3>
+            <p>
+              Write your about paragraph here. Keep it short and friendly.
+            </p>
+          </div>
+        </div>
+      </section>
 
-<footer>
-  <p>© 2026 Guilherme Jardim</p>
-</footer>
+      <section class="section">
+        <h2>My Work</h2>
+        <div class="pillRow">
+          <a class="pill" href="/resume.html">.resume</a>
+          <a class="pill" href="/portfolio.html">.portfolio</a>
+          <a class="pill" href="/blog.html">.blog</a>
+        </div>
+      </section>
 
-</body>
+      <section class="section">
+        <h2>Social Media</h2>
+        <div class="buttonRow">
+          <a class="primaryBtn" href="https://linkedin.com/in/your-handle">LinkedIn</a>
+          <a class="secondaryBtn" href="https://github.com/your-handle">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      © <span id="year"></span> Your Name
+    </footer>
+  </body>
 </html>

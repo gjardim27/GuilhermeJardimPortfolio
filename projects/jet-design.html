@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HROne Long-Range Business Jet Design | Guilherme Jardim</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">Guilherme Jardim</a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Portfolio</a>
+      <a href="https://www.linkedin.com/in/guilhermecjardim/" target="_blank" rel="noopener">LinkedIn</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">&#9789;</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Project Page -->
+<div class="project-page">
+  <div class="breadcrumb">
+    <a href="../index.html#projects">Portfolio</a>
+    <span>&gt;</span>
+    <span class="breadcrumb-current">HROne Business Jet</span>
+  </div>
+
+  <h1 class="project-page-title">HROne: Long-Range Business Jet Design</h1>
+
+  <div class="project-meta">
+    <span>AME 261 &mdash; Basic Flight Mechanics</span>
+    <span>Aircraft Performance Analysis Lead</span>
+    <span>University of Southern California</span>
+  </div>
+
+  <!-- HERO IMAGE: add a banner image (e.g. aircraft render, L/D plot, or CFD result) -->
+  <div class="project-hero-img">
+    <img src="../images/jet-design.jpg" alt="HROne long-range business jet design">
+  </div>
+
+  <div class="project-page-content">
+
+    <!-- ── Overview ── -->
+    <h2>Overview</h2>
+    <p>
+      For my AME 261 Basic Flight Mechanics project, I was the <strong>Aircraft
+      Performance Analysis Lead</strong> and was responsible for the aerodynamic design
+      of a long-range business jet. The project focused on the conceptual and
+      performance-driven aerodynamic design of a next-generation ultra-premium,
+      long-range business jet that must balance high aerodynamic performance with luxury
+      interior features, emphasizing cruise efficiency and field performance.
+    </p>
+    <p>
+      As the lead, I drove research, analysis, and decision-making for the aircraft's
+      mission performance, aerodynamics, stability, and control.
+    </p>
+
+    <!-- ── Aerodynamic Design & Trade Studies ── -->
+    <h2>Aerodynamic Design &amp; Trade Studies</h2>
+    <p>
+      I developed the aircraft's <strong>transonic drag model</strong>, building the
+      compressible drag framework and the component drag buildup. I tested potential
+      airfoils and wing geometries using <strong>ANSYS Fluent CFD</strong> to validate
+      performance predictions. Based on these results, I selected a
+      <strong>supercritical airfoil</strong> and performed sweep and thickness trades to
+      balance wave-drag risks with transonic aircraft performance and structural limits.
+    </p>
+    <p>
+      I sized the wing and planform area through <strong>aspect-ratio and taper trade
+      studies</strong> to match the mission requirements for takeoff, landing, climb,
+      and range. Each trade study fed directly into the mission sizing, ensuring that
+      aerodynamic decisions were grounded in real performance constraints.
+    </p>
+
+    <!-- FIGURE 1: L/D and Drag plots -->
+    <figure class="project-figure">
+      <!-- ADD YOUR IMAGE: L/D ratio vs velocity and Drag vs Mach plots -->
+      <img src="../images/jet-ld-drag.jpg" alt="Lift-to-Drag Ratio vs Velocity and Drag vs Mach Number">
+      <figcaption>
+        Lift-to-Drag ratio vs. velocity (left) and compressible drag vs. Mach number (right)
+        showing the drag-divergence characteristics and the available thrust at sea level and
+        cruise altitude. These curves were generated using the compressible drag framework
+        and validated against the trade study results.
+      </figcaption>
+    </figure>
+
+    <!-- ── CFD Validation ── -->
+    <h2>CFD Validation</h2>
+    <p>
+      To cross-check the analytical performance predictions, I ran CFD simulations in
+      <strong>ANSYS Fluent</strong> to verify the pressure distributions, flow separation
+      characteristics, and drag estimates at transonic cruise conditions. This provided
+      confidence in the airfoil selection and sweep angle decisions before committing to
+      the final configuration.
+    </p>
+
+    <!-- FIGURE 2: CFD results -->
+    <figure class="project-figure">
+      <!-- ADD YOUR IMAGE: ANSYS Fluent CFD result (pressure field over wing) -->
+      <img src="../images/jet-cfd.jpg" alt="ANSYS Fluent CFD simulation of wing pressure distribution">
+      <figcaption>
+        ANSYS Fluent CFD simulation showing the static pressure distribution around the
+        supercritical wing section at transonic cruise conditions, used to validate the
+        analytical drag predictions and verify the absence of strong shock-induced separation.
+      </figcaption>
+    </figure>
+
+    <!-- ── Performance Envelope ── -->
+    <h2>Performance Envelope &amp; Mission Sizing</h2>
+    <p>
+      To summarize the aircraft's performance based on the trade studies and design
+      decisions, I generated a <strong>full performance envelope</strong>, turning-limits
+      diagrams, rate-of-climb diagrams, and power curves. These graph outputs were
+      generated using <strong>MATLAB scripts</strong> that enabled automation, powerful
+      graphing, and rapid iteration with changes to propulsion, weight, and aerodynamic
+      decisions.
+    </p>
+    <p>
+      Beyond mission sizing, I tailored our configuration to <strong>FAA and CFR
+      gust-load, stall-margin, and field-length requirements</strong>, as well as
+      airport-specific constraints. This reflects full ownership of a complex and
+      ambiguous problem, including the ability to break it down into actionable steps
+      across requirements and analysis while managing trade studies.
+    </p>
+
+    <!-- FIGURE 3: Aircraft render / 3-view -->
+    <figure class="project-figure">
+      <!-- ADD YOUR IMAGE: Aircraft 3D render or 3-view drawing -->
+      <img src="../images/jet-render.jpg" alt="HROne aircraft configuration render">
+      <figcaption>
+        Final aircraft configuration showing the wing planform, engine placement, and
+        overall layout resulting from the aerodynamic trade studies and mission sizing.
+      </figcaption>
+    </figure>
+
+    <!-- ── Tools ── -->
+    <h2>Tools &amp; Skills</h2>
+    <div class="project-tools">
+      <span>MATLAB</span>
+      <span>ANSYS Fluent</span>
+      <span>Aircraft Design</span>
+      <span>Compressible Aerodynamics</span>
+      <span>Trade Studies</span>
+      <span>Performance Sizing</span>
+      <span>CFD Validation</span>
+      <span>FAA/CFR Compliance</span>
+    </div>
+
+    <!-- ── Report PDF ── -->
+    <h2>Report</h2>
+    <p>The full design report is available below.</p>
+    <div class="report-download">
+      <!-- ADD YOUR PDF: place the report in reports/ -->
+      <a href="../reports/jet-design-report.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+        Download Report (PDF)
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Guilherme Jardim</p>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>

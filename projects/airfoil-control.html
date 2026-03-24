@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Active Control of Transitional Airfoil Flows | Guilherme Jardim</title>
+  <title>Passive and Active Control of Transitional Airfoil Flows | Guilherme Jardim</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -23,7 +23,7 @@
   </div>
 </nav>
 
-<!-- Breadcrumb -->
+<!-- Project Page -->
 <div class="project-page">
   <div class="breadcrumb">
     <a href="../index.html#projects">Portfolio</a>
@@ -31,43 +31,167 @@
     <span class="breadcrumb-current">Airfoil Control</span>
   </div>
 
-  <h1 class="project-page-title">Active Control of Transitional Airfoil Flows</h1>
+  <h1 class="project-page-title">Passive and Active Control of Transitional Airfoil Flows at Low Reynolds Numbers</h1>
 
-  <!-- HERO IMAGE: replace src with a banner image for this project -->
+  <div class="project-meta">
+    <span>Summer 2025 Provost Fellowship</span>
+    <span>Faculty Advisor: Prof. Geoffrey Spedding</span>
+    <span>USC Dryden Wind Tunnel</span>
+  </div>
+
+  <!-- HERO IMAGE: add your banner image here -->
   <div class="project-hero-img">
-    <img src="../images/airfoil-control.jpg" alt="Active Control of Transitional Airfoil Flows">
+    <img src="../images/airfoil-control.jpg" alt="Dryden Wind Tunnel setup for active control experiments">
   </div>
 
   <div class="project-page-content">
+
+    <!-- ── Introduction ── -->
     <h2>Overview</h2>
     <p>
-      <!-- EDIT THIS: Write your project overview here -->
-      This project investigates the use of acoustic forcing to control boundary layer
-      transition and separation on a NACA 65₁-412 airfoil at low Reynolds numbers.
-      The work was conducted at USC's Dryden Wind Tunnel as part of the Summer Provost
-      Fellowship.
+      I tested speaker configurations in the Dryden Wind Tunnel to gain a better
+      understanding of active control methods, ultimately designed to enhance the
+      aerodynamic efficiency of an airfoil.
     </p>
-
-    <h2>Approach</h2>
     <p>
-      <!-- EDIT THIS: Describe your methodology -->
-      Designed a phase-locked PIV synchronization system coordinating camera, laser,
-      and acoustic speaker. Modernized a 1200+ line MATLAB codebase into modular,
-      multi-run workflows for efficient data processing.
+      Aerodynamic performance at low Reynolds numbers is governed by changes in
+      boundary layer attachment and flow characteristics that can significantly impact
+      the lift-to-drag ratio and overall efficiency. While separation from the surface
+      degrades lift-to-drag, downstream reattachment can mitigate the loss and improve
+      overall efficiency. One option to facilitate this reattachment is to employ active
+      control methods that create disturbances and excite the flow through forcing. For
+      example, small speakers can be embedded into the airfoil, or external speakers can
+      provide global acoustic forcing. By exciting the shear layer using pre-determined
+      frequencies and amplitudes, it can provide flexibility and control that passive
+      methods may lack.
     </p>
 
-    <h2>Results</h2>
+    <!-- ── Objectives ── -->
+    <h2>Objectives</h2>
     <p>
-      <!-- EDIT THIS: Describe key findings -->
-      Analyzed lift/drag response and separation behavior under acoustic forcing at
-      various frequencies and amplitudes. Identified optimal forcing parameters for
-      separation control.
+      Throughout the summer, the primary method tested was active methods using speakers
+      to answer the question: <em>What frequencies and sound-pressure levels are most
+      effective in improving performance across angles of attack and Reynolds numbers?</em>
+    </p>
+    <p>
+      The objectives were to: (i) quantify how active controls (internal/external speakers)
+      shift separation and reattachment, and (ii) identify effective ranges in actuation
+      frequency. The study measures lift, drag, and the derived L/D ratio, alongside
+      phase-locked particle image velocimetry (PIV), to estimate separation and
+      reattachment.
     </p>
 
-    <h2>Tools</h2>
+    <!-- ── PIV Data & Synchronization ── -->
+    <h2>PIV Data &amp; Hardware Synchronization</h2>
+    <p>
+      We gathered two primary sets of data over the summer: PIV and force data. PIV tracks
+      particles in an illuminated laser sheet to provide time-resolved maps of the velocity
+      field. This enables us to visualize and characterize the flow over the airfoil,
+      concluding its characteristics and the effects of our control methods.
+    </p>
+    <p>
+      This data is dependent on a powerful laser, a camera, speakers, and flow visualization
+      (fog), where, before this summer, there was no synchronization between them. It needs
+      to be synchronized not only to ensure repeatability but also to allow us to control
+      the phase differences that enable the acquisition of a broader range of data.
+      Therefore, <strong>I implemented a hardware-synchronized trigger system that ties
+      the camera, laser, and speaker to work under the same master clock.</strong>
+    </p>
+
+    <!-- FIGURE 1: Phase-locked PIV -->
+    <figure class="project-figure">
+      <!-- ADD YOUR IMAGE: place the phase-locked PIV figure in images/ -->
+      <img src="../images/airfoil-piv-phases.jpg" alt="Phase-locked PIV wall-normal velocity at selected speaker phases">
+      <figcaption>
+        Phase-locked PIV plots showing the wall-normal velocity field over the airfoil.
+        Red indicates upward velocity and blue indicates downward velocity. As the speaker
+        phase difference changes, the field exhibits evidence that the speaker is outputting
+        noise due to the disturbance over the airfoil surface, as shown by the red spots at
+        60&deg; and 90&deg; phase differences. The clarity of these patterns is only visible
+        because the camera, laser, and speaker are hardware-synchronized.
+      </figcaption>
+    </figure>
+
+    <!-- ── Force Data & Automation ── -->
+    <h2>Force Data &amp; Test Automation</h2>
+    <p>
+      Force data was another aspect of the testing procedures that I directly worked with.
+      My work is closely related to the backend of the script; specifically,
+      <strong>I redesigned our test automation script.</strong> The first difference was the
+      organization of the script; initially, it was a single file, which made it challenging
+      to work on specific parts and complex to understand. Therefore, I organized it into
+      various functions and incorporated different file I/O methods to keep track of our
+      tests. Secondly, I added a feature that allows us to seamlessly run multiple runs in
+      the same configuration, thereby improving the lab's data-gathering efficiency.
+    </p>
+
+    <!-- FIGURE 2: CL vs alpha -->
+    <figure class="project-figure">
+      <!-- ADD YOUR IMAGE: place the CL vs alpha plot in images/ -->
+      <img src="../images/airfoil-cl-vs-alpha.jpg" alt="Coefficient of lift vs angle of attack with and without speaker">
+      <figcaption>
+        Coefficient of lift vs. angle of attack comparing baseline performance (yellow) with
+        acoustic forcing (red). The baseline follows the expected near-linear rise at low &alpha;,
+        then shows a kink around the critical angle (point of flow reattachment). With the speaker
+        on, the curve is consistently above the baseline, especially around 4&deg; where there is
+        evidence of flow separation. This indicates that forcing energizes the shear layer,
+        causing earlier reattachment and demonstrating improved performance.
+      </figcaption>
+    </figure>
+
+    <!-- ── Conclusions ── -->
+    <h2>Conclusions</h2>
+    <p>
+      Together, the lift curves and phase-locked PIV data demonstrate that acoustic
+      forcing enhances performance, providing both quantitative and visual evidence of
+      earlier reattachment.
+    </p>
+
+    <!-- ── Reflection ── -->
+    <h2>Reflection</h2>
+    <p>
+      Overall, this experience working in the Dryden Wind Tunnel over the summer with
+      my colleagues was more than I could have expected. Throughout this experience, I
+      gained an incredible amount of knowledge about aerodynamic research in a wind
+      tunnel, collaboration, problem-solving, resilience, communication, and career
+      options. I learned through asking questions to my mentor Ari, discussing research
+      papers with the group, and working to decipher the results we gathered.
+    </p>
+    <p>
+      I also gained a deeper understanding of MATLAB, a tool I worked with daily, which
+      helped me become more confident in my abilities and acquire new problem-solving
+      skills. I was a part of Charles Klewicki's dissertation defense, which really
+      intrigued me and allowed me to see the full cycle of a PhD. Beyond research, this
+      opportunity opened doors to working with diverse individuals, where I was both a
+      mentee learning from Ari and also led experimental setups, taking ownership of
+      testing procedures. This includes understanding, restructuring, and rewriting the
+      1,200+ line automation script, as well as designing the system to synchronize our
+      laser, camera, and speaker systems for PIV.
+    </p>
+
+    <!-- ── Tools ── -->
+    <h2>Tools &amp; Skills</h2>
     <div class="project-tools">
-      <span>MATLAB</span><span>Python</span><span>DaVis</span><span>NX</span><span>SCPI</span><span>PIV</span>
+      <span>MATLAB</span>
+      <span>Python</span>
+      <span>DaVis (PIV)</span>
+      <span>Siemens NX</span>
+      <span>ASCII/SCPI</span>
+      <span>Wind Tunnel Operation</span>
+      <span>Phase-Locked PIV</span>
+      <span>Low-Re Aerodynamics</span>
     </div>
+
+    <!-- ── Report PDF ── -->
+    <h2>Report</h2>
+    <p>The full fellowship report is available below.</p>
+    <div class="report-download">
+      <!-- ADD YOUR PDF: place the report in reports/ -->
+      <a href="../reports/airfoil-control-report.pdf" class="btn btn-primary" target="_blank" rel="noopener">
+        Download Report (PDF)
+      </a>
+    </div>
+
   </div>
 </div>
 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Long-Range Business Jet Design | Guilherme Jardim</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">Guilherme Jardim</a>
+    <div class="nav-links">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#projects">Portfolio</a>
+      <a href="https://www.linkedin.com/in/guilhermecjardim/" target="_blank" rel="noopener">LinkedIn</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="toggle-icon">&#9789;</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="project-page">
+  <div class="breadcrumb">
+    <a href="../index.html#projects">Portfolio</a>
+    <span>&gt;</span>
+    <span class="breadcrumb-current">Long-Range Business Jet Design</span>
+  </div>
+
+  <h1 class="project-page-title">Long-Range Business Jet Design</h1>
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 32px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">AME 261 &mdash; Aircraft Performance Analysis Lead</p>
+
+  <div class="project-hero-img">
+    <img src="../images/ame261-jet-design.jpg" alt="Long-Range Business Jet Design">
+  </div>
+
+  <div class="project-page-content">
+
+    <h2>Overview</h2>
+    <p>
+      As part of AME 261 Basic Flight Mechanics, I served as the Aircraft Performance Analysis Lead
+      for a semester-long group project to design a long-range business jet. In this role, I led
+      research, analysis, and decision-making across the aircraft's mission performance,
+      aerodynamics, stability, and control. The project required full ownership of a complex and
+      ambiguous problem: breaking it down into actionable steps across requirements analysis, trade
+      studies, and regulatory compliance, while coordinating with the broader team.
+    </p>
+
+    <h2>Aerodynamic Framework</h2>
+    <p>
+      I built the compressible drag framework and the component drag buildup for the aircraft. This
+      involved accounting for wave-drag effects in the transonic regime and assembling contributions
+      from each major airframe component into a coherent drag polar. I selected a supercritical
+      airfoil to delay the onset of wave drag and ran sweep angle and thickness-ratio trade studies
+      to balance wave-drag risk with transonic cruise performance and structural load limits.
+    </p>
+    <p>
+      To validate the aerodynamic predictions, I cross-checked the performance estimates with ANSYS
+      Fluent CFD simulations, using the computational results to confirm that the analytical drag
+      buildup was tracking the correct trends across the cruise Mach range.
+    </p>
+
+    <h2>Wing Sizing &amp; Planform Trades</h2>
+    <p>
+      I sized the wing and planform area through systematic aspect-ratio and taper-ratio trade
+      studies, targeting mission requirements for takeoff field length, landing field length, climb
+      performance, and range. Each trade involved evaluating the effect on induced drag, wave drag,
+      structural weight, and stall speed simultaneously, requiring careful prioritization of
+      competing constraints.
+    </p>
+    <p>
+      The final wing configuration was selected to satisfy FAA and CFR stall-margin and
+      field-length requirements while meeting airport-specific compatibility constraints, including
+      wingspan limits and approach speed requirements.
+    </p>
+
+    <h2>Performance Envelope &amp; Analysis</h2>
+    <p>
+      To summarize the aircraft's performance, I generated a full suite of performance outputs
+      using MATLAB scripts that enabled automation, rapid iteration, and high-quality graphical
+      output. As propulsion, weight, and aerodynamic decisions were updated throughout the design
+      cycle, the scripts allowed the team to regenerate all performance outputs quickly and
+      consistently.
+    </p>
+    <p>
+      The outputs included: a full performance envelope (service ceiling vs. Mach number),
+      turning-limits diagrams, rate-of-climb diagrams across altitude, and power-required versus
+      power-available curves. These diagrams provided the primary quantitative basis for
+      configuration decisions and demonstrated compliance with the mission requirements for range
+      and cruise altitude.
+    </p>
+
+    <h2>Regulatory Compliance</h2>
+    <p>
+      Beyond mission sizing, I tailored the configuration to satisfy a range of FAA and CFR
+      requirements, including gust-load factors, stall-margin margins, and both takeoff and landing
+      field-length constraints. Each requirement imposed a constraint on the design space, and
+      managing these constraints simultaneously required a structured approach to the trade studies
+      and a clear understanding of which requirements were active at the final design point.
+    </p>
+
+    <h2>Tools &amp; Technologies</h2>
+    <div class="project-tools">
+      <span>MATLAB</span><span>ANSYS Fluent</span><span>CFD</span><span>Aerodynamic Analysis</span><span>Performance Sizing</span><span>FAA/CFR Compliance</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 Guilherme Jardim</p>
+</footer>
+
+<script src="../main.js"></script>
+</body>
+</html>

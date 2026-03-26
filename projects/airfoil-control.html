@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Active Control of Transitional Airfoil Flows | Guilherme Jardim</title>
+  <title>PIV Camera, Laser &amp; Speaker Synchronization | Guilherme Jardim</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -28,46 +28,123 @@
   <div class="breadcrumb">
     <a href="../index.html#projects">Portfolio</a>
     <span>&gt;</span>
-    <span class="breadcrumb-current">Airfoil Control</span>
+    <span class="breadcrumb-current">Active Control of Transitional Airfoil Flows</span>
   </div>
 
   <h1 class="project-page-title">Active Control of Transitional Airfoil Flows</h1>
+  <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 32px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;">Summer Provost Fellowship &mdash; USC Dryden Wind Tunnel</p>
 
-  <!-- HERO IMAGE: replace src with a banner image for this project -->
   <div class="project-hero-img">
-    <img src="../images/airfoil-control.jpg" alt="Active Control of Transitional Airfoil Flows">
+    <img src="../images/airfoil-control.png" alt="Phase-locked PIV plots over an airfoil with acoustic forcing">
   </div>
 
   <div class="project-page-content">
+
     <h2>Overview</h2>
     <p>
-      <!-- EDIT THIS: Write your project overview here -->
-      This project investigates the use of acoustic forcing to control boundary layer
-      transition and separation on a NACA 65₁-412 airfoil at low Reynolds numbers.
-      The work was conducted at USC's Dryden Wind Tunnel as part of the Summer Provost
-      Fellowship.
+      Aerodynamic performance at low Reynolds numbers is governed by changes in boundary layer
+      attachment and flow characteristics that can significantly impact the lift-to-drag ratio and
+      overall efficiency. While separation from the surface degrades lift-to-drag, downstream
+      reattachment can mitigate the loss and improve overall efficiency. One option to facilitate
+      this reattachment is to employ active control methods that create disturbances and excite the
+      flow through forcing. Small speakers embedded into the airfoil, or external speakers providing
+      global acoustic forcing, can excite the shear layer using pre-determined frequencies and
+      amplitudes, offering flexibility and control that passive methods may lack.
     </p>
-
-    <h2>Approach</h2>
     <p>
-      <!-- EDIT THIS: Describe your methodology -->
-      Designed a phase-locked PIV synchronization system coordinating camera, laser,
-      and acoustic speaker. Modernized a 1200+ line MATLAB codebase into modular,
-      multi-run workflows for efficient data processing.
+      This project addresses these questions experimentally in the USC Dryden Wind Tunnel. The
+      objectives are to: (i) quantify how active (internal/external speakers) controls shift
+      separation and reattachment, and (ii) identify effective ranges in actuation frequency. The
+      study measures lift, drag, and the derived L/D ratio, alongside phase-locked particle image
+      velocimetry (PIV), to estimate separation and reattachment locations.
     </p>
 
-    <h2>Results</h2>
+    <h2>Hardware Synchronization System</h2>
     <p>
-      <!-- EDIT THIS: Describe key findings -->
-      Analyzed lift/drag response and separation behavior under acoustic forcing at
-      various frequencies and amplitudes. Identified optimal forcing parameters for
-      separation control.
+      PIV requires a powerful laser, a high-speed camera, speakers, and flow visualization (fog)
+      working in concert. Before this project, there was no synchronization between these
+      instruments. Synchronization is critical not only for repeatability but also to control the
+      phase differences that enable acquisition of a broader range of data.
+    </p>
+    <p>
+      I designed and implemented a hardware-synchronized trigger system that ties the camera, laser,
+      and speaker to a single master clock. This required understanding the timing requirements of
+      each instrument, selecting appropriate signal interfaces, and writing control software to
+      manage the synchronization logic. The result is a system that enables phase-locked PIV
+      acquisition, where each snapshot is captured at a known, repeatable phase relative to the
+      speaker output cycle.
     </p>
 
-    <h2>Tools</h2>
+    <h2>Phase-Locked PIV Results</h2>
+    <p>
+      The synchronization system enables phase-locked PIV plots that illustrate the wall-normal
+      velocity field over the airfoil, where red indicates upward velocity and blue indicates
+      downward velocity. As the speaker phase difference changes across acquisitions, the field
+      exhibits clear evidence that the speaker is outputting noise: disturbances appear over the
+      airfoil surface, particularly visible as red momentum-injection regions at 60&deg; and 90&deg;
+      phase differences.
+    </p>
+    <p>
+      These regions of injected momentum directly impact the flow and promote reattachment. Crucially,
+      the clarity of these patterns is only possible because the camera, laser, and speaker are
+      hardware-synchronized. Without synchronization, these phase-dependent structures would be
+      smeared out across different acoustic phases and would not be resolvable. The figure thus
+      demonstrates both the effectiveness of acoustic actuation and the capability of the new
+      hardware synchronization method in controlling the experiment.
+    </p>
+
+    <h2>Test Automation Script Redesign</h2>
+    <p>
+      Force data collection was another key aspect of the testing procedures. The original test
+      automation script was a single monolithic file exceeding 1,200 lines, which made it difficult
+      to isolate specific functionality and challenging for the team to understand or modify safely.
+    </p>
+    <p>
+      I redesigned the script from scratch. The first major change was organization: I restructured
+      the code into modular functions with clear responsibilities and incorporated structured file
+      I/O methods to track test configurations and results. The second major addition was a
+      multi-run feature that allows seamless execution of multiple runs under the same configuration,
+      significantly improving the lab's data-gathering efficiency without requiring manual
+      intervention between runs.
+    </p>
+
+    <h2>Force Data &amp; Lift Curve Results</h2>
+    <p>
+      Using the redesigned automation script, we collected lift and drag data comparing airfoil
+      performance with and without acoustic forcing. The lift coefficient vs. angle of attack curves
+      show that the baseline (no speaker) follows the expected near-linear rise at low angles of
+      attack, then exhibits a kink near the critical angle of attack corresponding to the onset of
+      flow separation.
+    </p>
+    <p>
+      With the speaker active, the lift curve is consistently above the baseline across the tested
+      range, with the most significant improvement near 4&deg; where evidence of flow separation is
+      strongest. This indicates that acoustic forcing energizes the shear layer, promoting earlier
+      reattachment and yielding measurably improved aerodynamic performance. Together, the lift
+      curves and phase-locked PIV data provide both quantitative and visual evidence that acoustic
+      forcing is an effective active flow control strategy for low Reynolds number airfoils.
+    </p>
+
+    <h2>Reflection</h2>
+    <p>
+      This experience working in the Dryden Wind Tunnel over the summer was more than I could have
+      expected. I gained extensive knowledge about aerodynamic research in a wind tunnel, including
+      collaboration, problem-solving, resilience, and communication. The research I contributed to
+      directly advanced the understanding of low Reynolds number aerodynamics.
+    </p>
+    <p>
+      Technically, I deepened my proficiency in MATLAB, developed new hardware integration skills,
+      and took direct ownership of two critical infrastructure components of the lab's experimental
+      pipeline: the automation script and the synchronization system. I was also part of Charles
+      Klewicki's dissertation defense, which gave me a view of the full PhD research cycle. This
+      experience opened the door to continuing the work through the Provost Fall Fellowship.
+    </p>
+
+    <h2>Tools &amp; Technologies</h2>
     <div class="project-tools">
-      <span>MATLAB</span><span>Python</span><span>DaVis</span><span>NX</span><span>SCPI</span><span>PIV</span>
+      <span>MATLAB</span><span>Python</span><span>DaVis</span><span>PIV</span><span>SCPI</span><span>Hardware Triggering</span><span>Wind Tunnel Testing</span>
     </div>
+
   </div>
 </div>
 
